@@ -154,5 +154,5 @@ Week 9's **problem set** consisted of a single project: [Finance](https://cs50.h
 
 <br>
 
-###And that's it!
+### And that's it!
 I hope you enjoyed reading to the end.
