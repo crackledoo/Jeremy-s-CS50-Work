@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3>Quote screen!</h3>
+    <h5>QUOTE SCREEN!</h5>
+    <form action="/quote" method="post">
+        <p>Look up the price of a desired stock:</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ticker symbol" type="text">
+        </div>
+    </form>
+    <table id="dynamoSearch" style='margin-left: auto; margin-right: auto;'></table>
+    <div id="buttonSpace" style="text-align:center"></div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    let input = document.querySelector('input');
+    input.addEventListener('keyup', function()
+    {
+        console.log(input.value);
+        $.get('/quoted?symbol=' + input.value, function(stocks)
+        {
+            let html = '<br>';
+            if (stocks.name)
+            {
+                html += '<th>Symbol</th><th>Name</th><th>Price</th>';
+                html += '<tr>';
+                let quotedSymbol = stocks.symbol;
+                let quotedName = stocks.name;
+                let quotedPrice = stocks.price;
+                html += '<td>' + quotedSymbol + '</td>';
+                html += '<td>' + quotedName + '</td>';
+                html += '<td>' + quotedPrice + '</td>';
+                html += '</tr>';
+                console.log("HEY LOOK AT THIS:");
+                console.log(quotedName);
+                let button = "";
+                button += "<form onkeydown='return event.key != 'Enter';' action='/buy' method='get'>";
+                button += "<button class='btn btn-primary' name='stock' type='submit'  value=";
+                button += quotedSymbol;
+                button += " style='text-align=center'>Buy Now!";
+                button += "</button></form><br>";
+                document.getElementById('buttonSpace').innerHTML = button;
+            }
+            document.getElementById('dynamoSearch').innerHTML = html;
+        });
+    });
+</script>
+{% endblock %}

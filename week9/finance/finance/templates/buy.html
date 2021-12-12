@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h3>Buy Screen!</h3>
+    <h5>BUY SCREEN!</h5>
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <p>How many shares of this stock would you like to buy?</p>
+            <table style='margin-left: auto; margin-right: auto;'>
+                <tr>
+                    <td>
+                        {{stock}}
+                        {{quotedName}}
+                        {{quotedPrice}}
+                    </td>
+                </tr>
+            </table>
+            <input type="number" autofocus id="qty" name="qty" min="1" max="2000" value="1" style='width:10em;'>
+            <input type="hidden" name='stock' value={{stock}}>
+            <button class='btn btn-primary' type='submit'>Confirm Purchase</button>
+        </div>
+    </form>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    let input = document.querySelector('input');
+    input.addEventListener('keyup', function()
+    {
+        console.log(input.value);
+        $.get('/quoted?symbol=' + input.value, function(stocks)
+        {
+            let html = '<br>';
+            if (stocks.name)
+            {
+                html += '<th>Symbol</th><th>Name</th><th>Price</th>';
+                html += '<tr>';
+                let quotedSymbol = stocks.symbol;
+                let quotedName = stocks.name;
+                let quotedPrice = stocks.price;
+                html += '<td>' + quotedSymbol + '</td>';
+                html += '<td>' + quotedName + '</td>';
+                html += '<td>' + quotedPrice + '</td>';
+                html += '</tr>';
+                console.log("HEY LOOK AT THIS:");
+                console.log(quotedName);
+                html += "<td><button class='btn btn-primary' type='button' value=";
+                html += quotedSymbol;
+                html += " style='text-align=center' method='post'>Buy Now!"
+                html += "</button></td><br>";
+            }
+            document.getElementById('dynamoSearch').innerHTML = html;
+        });
+    });
+</script>
+{% endblock %}

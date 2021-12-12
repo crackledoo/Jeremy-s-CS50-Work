@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block main %}
+    <h3>Welcome!</h3><br>
+    <h4>You currently have:</h4>
+    <h2>{{cash}}</h2>
+    <h4>In cold, hard, money-man cash.</h4><br>
+    <h4>Here's your money-man history:</h4>
+    <table style='margin-left: auto; margin-right: auto;' class='indextable'>
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Quantity</th>
+                <th>Sale Type</th>
+                <th>Price</th>
+                <th>Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in history %}
+                <tr>
+                    <td class='indextable'>{{stock.name}}</td>
+                    <td class='indextable'>{{stock.qty}}</td>
+                    <td class='indextable'>{{stock.type}}</td>
+                    <td class='indextable'>{{stock.price}}</td>
+                    <td class='indextable'>{{stock.datetime}}</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
