@@ -103,13 +103,28 @@ Week 5's **problem set** consisted of only one project: [Speller](https://cs50.h
 
 ### Week 6: 
 
+Week 6's **lab** consisted of one project: [World Cup](https://cs50.harvard.edu/x/2021/labs/6/). The program runs simulations of the FIFA World Cup. It generates 1000 randomized tournaments, whose brackets were randomized and whose matches were slightly randomized (with weight granted to the team's 2018 Men's and 2019 Women's FIFA ratings). It then prints a list of each team's simulated odds of tournament victory.
+
+Week 6's **problem set** of **three projects** and **two** pairs of easier/harder projects: [Hello](https://cs50.harvard.edu/x/2021/psets/6/hello/), [Readability](https://cs50.harvard.edu/x/2021/psets/6/readability/) and [DNA](https://cs50.harvard.edu/x/2021/psets/6/dna/), and [Mario (easy)](https://cs50.harvard.edu/x/2021/psets/6/mario/less/) / [Mario (hard)](https://cs50.harvard.edu/x/2021/psets/6/mario/more/) and [Cash](https://cs50.harvard.edu/x/2021/psets/6/cash/) / [Credit](https://cs50.harvard.edu/x/2021/psets/6/credit/).
+- **Hello** prompts the user for their name, and then returns "hello, {name}". Very simple.
+- **Readability** once again performs the Coleman-Liau index on any provided string of text.
+- **DNA** reads a txt file containing a sample of DNA nucleotide bases belonging to an unknown person, and a txt file contianing several peoples' DNA nucleotide bases. The program then enumerates any Short Tandem Repeats within the sample, and identifies any available person with matching STRs.
+- **Mario (hard)** once again generates a pyramid of #'s based on the user's inputted height.
+- **Credit** once again verifies and identifies card numbers with Luhn's algorithm.
+
 <br>
 
 <br>
 
 ## SQLITE
 
-### Week 7: 
+### Week 7: SQL
+
+Week 7's **lab** was simply a series of prompts named [Songs](https://cs50.harvard.edu/x/2021/labs/7/), asking the student to write the cortrect SQL queries to acquire information from a Spotify database.
+
+Week 7's **problem set** consisted of two prompts as well: [Movies](https://cs50.harvard.edu/x/2021/psets/7/movies/) and [Fiftyville](https://cs50.harvard.edu/x/2021/psets/7/fiftyville/). 
+- **Movies** asked for a similar set of SQL queries to acquire information from an IMDB database.
+- **Fiftyville** was an incredibly entertaining 'SQL mystery', where the student had to follow a series of hints to query for the exact information to identify a criminal and their accomplice.
 
 <br>
 
@@ -117,7 +132,11 @@ Week 5's **problem set** consisted of only one project: [Speller](https://cs50.h
 
 ## HTML, CSS, JAVASCRIPT
 
-### Week 8: 
+### Week 8: HTML, CSS, JavaScript
+
+Week 8's **lab** consisted of a single project: [Trivia](https://cs50.harvard.edu/x/2021/labs/8/). The webpage presents a multiple choice question and a free response question, both of which will turn red/green depending upon the user's answer.
+
+Week 8's **problem set** consisted also of a single project: [Homepage](https://cs50.harvard.edu/x/2021/psets/8/homepage/). The webpage is simply a personalized homepage, which marked the beginnings of my professional portfolio.
 
 <br>
 
@@ -125,4 +144,15 @@ Week 5's **problem set** consisted of only one project: [Speller](https://cs50.h
 
 ## FLASK
 
-### Week 9: 
+### Week 9: Flask
+
+Finally, week 9's **lab** consisted of a single project: Birthdays. The webpage both presents a table of every entrant's name and birthday -- and also allows the user to enter their own name and birthday to the database.
+
+Week 9's **problem set** consisted of a single project: [Finance](https://cs50.harvard.edu/x/2021/psets/9/finance/). Certainly the largest endeavor of the course, this website features a host of dynamic webpages that quotes stocks via IEX's API, and allows a user to create an account, log in for a session, and buy/sell stocks in real time. As the culmination of Python, HTML5, and Flask, and entire fullstack web development tends to be, this project took me the longest time to complete.
+
+<br>
+
+<br>
+
+###And that's it!
+I hope you enjoyed reading to the end.
